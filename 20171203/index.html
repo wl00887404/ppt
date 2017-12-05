@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Webpage Design 5</title>
+
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/theme/white.css">
+    <link rel="stylesheet" href="../lib/css/atom-one-dark.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <section>
+                    <h1>Webpage Design 5</h1>
+                </section>
+                <section>
+                    <div id="profile">
+                        <h3>政治</h3>
+                        <img src="../image/avatar.jpg" />
+                    </div>
+                    <div id="link">
+                        <a href="https://www.facebook.com/he.z.min.1" target="_blank">
+                            <img src="../image/facebook.svg" />
+                        </a>
+                        <a href="mailto:wl00887404@gmail.com">
+                            <img src="../image/email.svg" />
+                        </a>
+                        <a href="https://github.com/wl00887404" target="_blank">
+                            <img src="../image/github.png" />
+                        </a>
+                        <a href="https://codepen.io/wl00887404/" target="_blank">
+                            <img src="../image/codepen.png" />
+                        </a>
+                        <a href="https://wl00887404.github.io" target="_blank">
+                            <img src="../image/blog.svg" />
+                        </a>
+                    </div>
+                </section>
+            </section>
+            <section><section><h1>專案</h1></section><section><h2>分組名單已經出來了</h2></section><section><h2>環境</h2>
+<ul>
+<li>Ip Address =&gt; 140.123.175.101</li>
+<li>Server =&gt; Nginx</li>
+<li>Http =&gt; 8080</li>
+<li>PHP 5.6</li>
+<li>Mysql 5.7</li>
+</ul></section><section><h2>帳密</h2>
+<ul>
+<li>Accout =&gt; teamXX [ XX &lt;= [01,02 ... 10] ]</li>
+<li>Password =&gt; 每組不一樣，選一個組長找我拿</li>
+</ul>
+<h3>SSH、資料庫 同一組</h3></section><section><h2>No FTP</h2>
+<h2>Just Git</h2></section><section><div style="font-size:1em;">
+    <h1>Just Git</h1>
+</div></section><section><div style="font-size:1.5em;">
+    <h1>Just Git</h1>
+</div></section><section><div style="font-size:2em;">
+    <h1>Just Git</h1>
+</div></section></section><section><section><h1>Server</h1></section><section><h2>Checkout here</h2>
+<p><a href="http://140.123.175.101:8080/phpinfo.php" target="_blank">http://140.123.175.101:8080/phpinfo.php</a></p></section><section><h2>Clone this</h2>
+<pre><code class="hljs">git <span class="hljs-built_in">clone</span> &lt;team&gt;@140.123.175.101:/www/&lt;team&gt;/.git
+</code></pre></section></section><section><section><h1>Git</h1></section><section><h2>Get Started</h2>
+<pre><code class="hljs"><span class="hljs-comment"># 初始化一個版本庫</span>
+git init
+
+<span class="hljs-comment"># 複製遠端的本庫</span>
+git <span class="hljs-built_in">clone</span>
+</code></pre></section><section><h2>Remote</h2>
+<pre><code class="hljs"><span class="hljs-comment"># show 出所有的 remote</span>
+<span class="hljs-comment"># origin 預設是你 clone 的來源</span>
+git remote -v
+git remote add &lt;name&gt; &lt;<span class="hljs-built_in">source</span>&gt;
+git remote remove &lt;name&gt;
+git remote <span class="hljs-built_in">set</span>-url &lt;name&gt; &lt;new_source&gt;
+</code></pre></section><section><h2>Information</h2>
+<pre><code class="hljs"><span class="hljs-comment"># 目前工作區的追蹤狀態</span>
+git status
+
+<span class="hljs-comment"># 所有 commit 紀錄</span>
+<span class="hljs-comment"># HEAD 為當前的 commit</span>
+<span class="hljs-comment"># HEAD^ 為上則 commit</span>
+git <span class="hljs-built_in">log</span>
+
+<span class="hljs-comment"># commit 的變更</span>
+git show &lt;commit&gt;
+</code></pre></section><section><h2>Commit</h2>
+<pre><code class="hljs"><span class="hljs-comment"># 追蹤檔案</span>
+git add &lt;path&gt;
+
+<span class="hljs-comment"># Commit</span>
+git commit -m &lt;message&gt;
+
+<span class="hljs-comment"># 切換版本</span>
+git checkout &lt;commit&gt;
+<span class="hljs-comment"># 單個檔案</span>
+git checkout &lt;file&gt; &lt;commit&gt;
+
+</code></pre></section><section><h2>Branch</h2>
+<pre><code class="hljs"><span class="hljs-comment"># 查看分支</span>
+<span class="hljs-comment"># 主線叫做 master</span>
+git branch
+
+<span class="hljs-comment"># 新增分支</span>
+git branch &lt;branch_name&gt;
+
+<span class="hljs-comment"># 刪除</span>
+git branch -d &lt;branch_name&gt;
+
+<span class="hljs-comment"># 切換分支</span>
+git checkout &lt;branch_name&gt;
+</code></pre></section><section><h2>合併 branch (Merge)</h2>
+<pre><code class="hljs"><span class="hljs-comment"># 在 master</span>
+git merge &lt;branch_name&gt;
+</code></pre></section><section><h2>Conflict</h2>
+<h3>以 PHP 為例</h3>
+<pre><code class="hljs"><span class="hljs-meta">&lt;?php</span>
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<span class="hljs-comment">// 在 HEAD 中的程式碼</span>
+=======
+<span class="hljs-comment">// 在 branch 中的程式碼</span>
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; branch
+<span class="hljs-meta">?&gt;</span>
+</code></pre></section><section><ol>
+<li>將檔案編輯成目標</li>
+<li><code>git add &lt;name&gt;</code></li>
+<li><code>git commit</code></li>
+<li>完成</li>
+</ol></section><section><h2>Commit 打錯怎麼辦？</h2>
+<pre><code class="hljs"><span class="hljs-comment"># 回復到上則 commit</span>
+git reset HEAD^
+
+<span class="hljs-comment"># 包含檔案內容</span>
+git reset HEAD^ --hard
+</code></pre></section><section><h2>同步遠端版本庫</h2>
+<pre><code class="hljs"><span class="hljs-comment"># 上傳</span>
+<span class="hljs-comment"># 如果遇到衝突，要先 pull</span>
+git push &lt;remote_name&gt; &lt;branch_name&gt;
+
+<span class="hljs-comment"># 強制更新</span>
+git push &lt;remote_name&gt; &lt;branch_name&gt; -f
+
+<span class="hljs-comment"># 下載</span>
+<span class="hljs-comment"># 如果有衝突，處理如同 Merge</span>
+git pull &lt;remote_name&gt; &lt;branch_name&gt;
+</code></pre></section><section><p><a href="https://backlog.com/git-tutorial/tw/" target="_blank">連猴子都能懂的Git入門指南</a></p></section></section><section><section><h1>MySql</h1></section><section><p><img src="./xampp.jpg" alt=""></p></section><section><h2>登入</h2>
+<pre><code class="hljs"><span class="hljs-comment"># -u 使用者</span>
+<span class="hljs-comment"># -p 使用密碼</span>
+<span class="hljs-comment"># -h 連接遠端</span>
+mysql -u &lt;account&gt; -p -h 140.123.175.101
+</code></pre></section><section><h2>備分</h2>
+<pre><code class="hljs">mysqldump -u &lt;account&gt; -p -h 140.123.175.101 &lt;database&gt; &gt; &lt;output_file&gt;
+</code></pre></section><section><h2>匯入</h2>
+<pre><code class="hljs">mysql -u &lt;account&gt; -p -h 140.123.175.101 &lt;database&gt; &lt; &lt;output_file&gt;
+</code></pre></section><section><h2>查詢</h2>
+<pre><code class="hljs"><span class="hljs-comment"># 看所有資料庫</span>
+MySQL [(none)]&gt; show database;
+
+<span class="hljs-comment"># 選擇資料庫</span>
+MySQL [(none)]&gt; use <span class="hljs-built_in">test</span>;
+
+<span class="hljs-comment"># 看所有 table</span>
+MySQL [<span class="hljs-built_in">test</span>]&gt; show tables;
+
+<span class="hljs-comment"># 看 table 設定</span>
+MySQL [<span class="hljs-built_in">test</span>]&gt; show columns from table;
+</code></pre></section><section><h2>Create Table</h2>
+<pre><code class="hljs"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> table_name(
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> AUTO_INCREMENT <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    <span class="hljs-keyword">name</span> var_char(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+)
+</code></pre></section><section><h2>插入資料</h2>
+<pre><code class="hljs"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> table_name(
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span> AUTO_INCREMENT <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    <span class="hljs-keyword">name</span> var_char(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+)
+</code></pre></section><section><h3>資料庫行為稱為 CRUD</h3>
+<ol>
+<li>Create</li>
+<li>Read</li>
+<li>Update</li>
+<li>Delete</li>
+</ol></section><section><h2>剩下google都有</h2></section></section>
+        </div>
+    </div>
+
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            dependencies: [{
+                    src: '../plugin/notes/notes.js',
+                    async: true
+                }
+            ]
+        });
+    </script>
+</body>
+
+</html>
