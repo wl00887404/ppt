@@ -50,12 +50,41 @@
                     # 上週課堂教什麼？
                 </section>
                 <section data-markdown>
-                    ## 應該還蠻簡單的吧
+                    ## 目前為止還行嗎？
+                </section>
+                <section id="isItDifficult">
+                    <h4>目前為止還行嗎？</h4>
+                    <div>
+                        <canvas width="16" height="4"></canvas>
+                    </div>
+                    <div class="values" style="display:flex;justify-content:space-around;font-size:0.6em;margin-top:2rem;">
+                        <div>
+                            <div>
+                                <span>我覺得可以：</span>
+                                <span>0</span>
+                            </div>
+                            <div style="margin-top:0.5em;">
+                                <button type="button" style="font-size:0.8em;">投票</button>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <span>我覺得不行：</span>
+                                <span>0</span>
+                            </div>
+                            <div style="margin-top:0.5em;">
+                                <button type="button" style="font-size:0.8em;">投票</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section data-markdown>
+                    ## 我猜應該還蠻簡單的吧
                 </section>
                 <section data-markdown>
                     ## 這次課的內容
                     ## 算是補充教材
-                </section>                    
+                </section>
             </section>
             <section>
                 <section data-markdown>
@@ -64,6 +93,32 @@
                 <section data-markdown>
                     ## 普查一下
                     ## 你寫過 CSS 嗎？
+                </section>
+                <section id="hadYouEverTriedCSS">
+                    <h4>你寫過 CSS 嗎？</h4>
+                    <div>
+                        <canvas width="16" height="4"></canvas>
+                    </div>
+                    <div class="values" style="display:flex;justify-content:space-around;font-size:0.6em;margin-top:2rem;">
+                        <div>
+                            <div>
+                                <span>我有寫過：</span>
+                                <span>0</span>
+                            </div>
+                            <div style="margin-top:0.5em;">
+                                <button type="button" style="font-size:0.8em;">投票</button>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <span>我沒寫過：</span>
+                                <span>0</span>
+                            </div>
+                            <div style="margin-top:0.5em;">
+                                <button type="button" style="font-size:0.8em;">投票</button>
+                            </div>
+                        </div>
+                    </div>
                 </section>
                 <section data-markdown>
                     ## 我沒寫過
@@ -220,7 +275,7 @@
                 <section>
                     <h2>完成</h2>
                     <p><a href="javascript:Reveal.slide(1)">CSS Dinner</a> 與 <a href="javascript:Reveal.slide(1)">Flexbox Froggy</a></p>
-                    <p>將答案分別記錄在</p> 
+                    <p>將答案分別記錄在</p>
                     <p><strong>/20171022/dinner.md</strong></p>
                     <p>與</p>
                     <p><strong>/20171022/froggy.md</strong></p>
@@ -228,7 +283,7 @@
                 <section data-markdown>
                     ## [作業範例](https://gist.github.com/wl00887404/ed75aacd23264c9e7ac6672e365d0a20)
                     ### 完成剩餘 50 題，上傳至 github
-                </section>    
+                </section>
             </section>
         </div>
     </div>
@@ -258,25 +313,131 @@
             ]
         });
     </script>
-    <!-- <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
     <script>
+        Chart.defaults.global.defaultFontSize = 20;
+        Chart.defaults.global.defaultFontColor = "#000000";
+
         // Initialize Firebase
         const config = {
             apiKey: "AIzaSyBOV-ZFEa5v0cd40K7sLfvAJYAdyqSZTnw",
-            authDomain: "localhost",
+            authDomain: "wl00887404.github.io",
             databaseURL: "https://webpage-design-2017.firebaseio.com",
             projectId: "webpage-design-2017",
             storageBucket: "webpage-design-2017.appspot.com",
             messagingSenderId: "496533383106"
         }
+
         firebase.initializeApp(config)
         const defaultDatabase = firebase.database()
-        let hadYouEverTriedCSS=defaultDatabase.ref().child("hadYouEverTriedCSS")
-        hadYouEverTriedCSS.once('value').then(value=>console.log(value.val()))
-        hadYouEverTriedCSS.on('child_added', value=>console.log(value.val()))
-        hadYouEverTriedCSS.on('child_changed', value=>console.log(value.val()))
-        hadYouEverTriedCSS.on('child_removed', value=>console.log(value.val()))
-    </script> -->
+
+        const makeChart=id=>{
+            const chart=document.querySelector(`#${id} canvas`)
+            const valuesDom=document.querySelectorAll(`#${id} .values div div span:nth-child(2)`)
+            const buttons=document.querySelectorAll(`#${id} .values button`)
+            const yes=buttons[0]
+            const no=buttons[1]
+            let ctx = chart.getContext('2d')
+            let mChart = new Chart(ctx, {
+                type: "horizontalBar",
+                data: {
+                    labels: ["我有寫過","我沒寫過"],
+                    datasets: [
+                        {
+                            label: "data",
+                            fill: false,
+                            backgroundColor: ["rgba(255, 99, 132, 0.2)","rgba(54, 162, 235, 0.2)"],
+                            borderColor: ["rgb(255, 99, 132)",'rgb(54, 162, 235)'],
+                            data: [0,0],
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    legend:{
+                        display:false
+                    },
+                    tooltips: {
+                        enabled:false
+                    },
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                beginAtZero: true,
+                                stepSize:1,
+                                maxTicksLimit:15,
+                                maxRotation:0
+                            }
+                        }]
+                    }
+                }
+            })
+
+            let ref=defaultDatabase.ref().child(id)
+            ref.on('value',data=>{
+                let {yes,no}=data.val()
+                mChart.data.datasets[0].data[0]=yes
+                mChart.data.datasets[0].data[1]=no
+                mChart.update()
+                valuesDom[0].innerHTML=yes
+                valuesDom[1].innerHTML=no
+            })
+
+            const vote=(option)=>{
+                lastState=sessionStorage[id]
+                lastState=lastState==undefined?undefined:lastState=="true"?true:false
+                sessionStorage[id]=option
+                buttonState()
+                console.log(lastState)
+                console.log(option)
+                console.log(lastState!=option)
+                if(option){
+                    ref.transaction((post)=> {
+                        if(lastState!=undefined&&lastState!=option){
+                            no.disabled=false
+                            post.no-=1
+                        }
+                        post.yes+=1
+                        return post
+                    })
+                }
+                else{
+                    ref.transaction((post)=> {
+                        if(lastState!=undefined&&lastState!=option){
+                            post.yes-=1
+                        }
+                        post.no+=1
+                        return post
+                    })
+                }
+            }
+
+            const buttonState=()=>{
+                yes.disabled=true;
+                no.disabled=true;
+                if(sessionStorage[id]==undefined){
+                    yes.disabled=false;
+                    no.disabled=false;
+                }
+                else if(sessionStorage[id]=="true"){
+                    no.disabled=false;
+                }
+                else{
+                    yes.disabled=false;
+                }
+            }
+
+            buttonState()
+            yes.onclick=vote.bind(null,true)
+            no.onclick=vote.bind(null,false)
+        }
+
+        makeChart('hadYouEverTriedCSS')
+        makeChart('isItDifficult')
+
+
+    </script>
 </body>
 
 </html>
