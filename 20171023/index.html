@@ -211,7 +211,7 @@
                     # Game
                 </section>
                 <section data-markdown>
-                    *Selectors Layout*
+                    *Selectors*
                     # CSS Dinner
 
                     [Game Link](https://flukeout.github.io/)
@@ -276,9 +276,9 @@
                     <h2>完成</h2>
                     <p><a href="javascript:Reveal.slide(5,1)">CSS Dinner</a> 與 <a href="javascript:Reveal.slide(5,2)">Flexbox Froggy</a></p>
                     <p>將答案分別記錄在</p>
-                    <p><strong>/20171022/dinner.md</strong></p>
+                    <p><strong>/20171023/dinner.md</strong></p>
                     <p>與</p>
-                    <p><strong>/20171022/froggy.md</strong></p>
+                    <p><strong>/20171023/froggy.md</strong></p>
                 </section>
                 <section data-markdown>
                     ## [作業範例](https://gist.github.com/wl00887404/ed75aacd23264c9e7ac6672e365d0a20)
@@ -334,6 +334,9 @@
 
         const makeChart=id=>{
             const chart=document.querySelector(`#${id} canvas`)
+            const labels=Array
+                .from(document.querySelectorAll(`#${id} .values div div span:nth-child(1)`))
+                .map(({innerText})=>innerText.slice(0,innerText.length-1))
             const valuesDom=document.querySelectorAll(`#${id} .values div div span:nth-child(2)`)
             const buttons=document.querySelectorAll(`#${id} .values button`)
             const yes=buttons[0]
@@ -342,7 +345,7 @@
             let mChart = new Chart(ctx, {
                 type: "horizontalBar",
                 data: {
-                    labels: ["我有寫過","我沒寫過"],
+                    labels,
                     datasets: [
                         {
                             label: "data",
