@@ -41,24 +41,19 @@ Box.of = x => new Box(x)
 
 const cropChapter = x => {
 	return x
-		.split(/<p>&lt;&lt;&lt;<\/p>/)
+		.split(/<p>(?:\{\{\{|\}\}\})<\/p>/)
 		.map(x => x.trim())
 		.filter(x => x != '')
+		.map(cropSlide)
 		.map(x => `<section>${x}</section>`)
 		.join('')
 }
 
-const cropSlide = x => {
-	return x
-		.split(/<p>&lt;--<\/p>/)
+const cropSlide = xs => {
+	return xs
+		.split(/<hr>/)
 		.map(x => x.trim())
-		.map(x => {
-			if (x != '<section>' && x != '</section>') {
-				return `<section>${x}</section>`
-			} else {
-				return x
-			}
-		})
+		.map(x => `<section>${x}</section>`)
 		.join('')
 }
 
@@ -83,8 +78,6 @@ const fillInTemplate = (template = '', argsObj = {}) => {
 const html = Box.of(slidesRaw)
 	.map(x => md.render(x))
 	.map(cropChapter)
-	.map(cropSlide)
 	.map(slides => Object.assign({}, setting, { slides }))
 	.fold(argsObj => fillInTemplate(template, argsObj))
-
 fs.writeFileSync(`${target}/index.html`, html)
