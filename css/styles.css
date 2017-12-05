@@ -27,6 +27,9 @@ img {
     padding: 0.5em;
 }
 
+.reveal li{
+    line-height: 1.8;
+}
 #profile img {
     max-width: 30%;
     border-radius: 50%;
