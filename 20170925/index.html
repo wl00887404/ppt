@@ -1,0 +1,482 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>App Inventor 2</title>
+
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/theme/white.css">
+    <link rel="stylesheet" href="../lib/css/atom-one-dark.css">
+
+    <style>
+        * {
+            text-transform: none!important;
+        }
+
+        img {
+            border: none!important;
+        }
+
+        .reveal ul {
+            line-height: 1.4;
+        }
+
+        .reveal h4 {
+            font-weight: 400;
+        }
+
+        .reveal a:hover img {
+            box-shadow: none!important;
+        }
+
+        .reveal pre {
+            box-shadow: none;
+            border-radius: 4px;
+        }
+
+        .reveal pre code {
+            padding: 0.5em;
+        }
+
+        #profile img {
+            max-width: 30%;
+            border-radius: 50%;
+            box-shadow: none!important;
+        }
+
+        #link img {
+            width: 8%;
+            border-radius: 50%;
+            box-shadow: none!important;
+        }
+        
+        .present > #profile ,.present > #link img{
+            animation-duration: .8s;
+            animation-fill-mode: both;
+            animation-name:popIn;
+        }
+
+        #profile{
+            animation-delay: 0.4s;
+        }
+        #link a:nth-child(1) img{
+            animation-delay: 0.6s;
+        }
+        #link a:nth-child(2) img{
+            animation-delay: 0.8s;
+        }
+        #link a:nth-child(3) img{
+            animation-delay: 1.0s;
+        }
+        #link a:nth-child(4) img{
+            animation-delay: 1.2s;
+        }
+        #link a:nth-child(5) img{
+            animation-delay: 1.4s;
+        }
+
+        @keyframes heart {
+            0% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.5);
+            }
+            50% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes popIn {
+            0% {
+                -webkit-transform: scale3d(0, 0, 0);
+                transform: scale3d(0, 0, 0);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            40% {
+                -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+                -webkit-transform: scale3d(1.08, 1.08, 1.08);
+                transform: scale3d(1.08, 1.08, 1.08);
+            }
+            60% {
+                -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+                animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+            80% {
+                -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+                animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+                -webkit-transform: scale3d(1.03, 1.03, 1.03);
+                transform: scale3d(1.03, 1.03, 1.03);
+            }
+            100% {
+                -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <section data-markdown>
+                    ### 嘉義長庚呼吸照護系
+                    # 一起來寫 App 吧
+                </section>
+                <section>
+                    <div id="profile">
+                        <h3>政治</h3>
+                        <img src="https://scontent.fkhh1-2.fna.fbcdn.net/v/t1.0-9/19366426_1570568816300681_6860427109623634434_n.jpg?oh=304964af12999cb643874ed9c127aa25&oe=5A18CA6F" />
+                    </div>
+                    <div id="link">
+                        <a href="https://www.facebook.com/he.z.min.1" target="_blank">
+                            <img src="https://image.flaticon.com/icons/svg/145/145802.svg" />
+                        </a>
+                        <a href="mailto:wl00887404@gmail.com">
+                            <img src="https://image.flaticon.com/icons/svg/190/190727.svg" />
+                        </a>
+                        <a href="https://github.com/wl00887404" target="_blank">
+                            <img src="http://www.freeiconspng.com/uploads/git-github-hub-icon-25.png" />
+                        </a>
+                        <a href="https://codepen.io/wl00887404/" target="_blank">
+                            <img src="http://blog.codepen.io/wp-content/uploads/2012/06/Button-Black-Large.png" />
+                        </a>
+                        <a href="https://wl00887404.github.io" target="_blank">
+                            <img src="https://image.flaticon.com/icons/svg/179/179312.svg" />
+                        </a>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    ### 看到剛剛的標題
+                    ### 你腦中的第一個想法
+                </section>
+                <section data-markdown>
+                    ## 什麼？
+                    ## 這堂要寫我程式？
+                </section>
+                <section data-markdown>
+                    ## 然後這是你的表情
+                </section>
+                <section data-markdown>
+                    ![](./cat.jpg)
+                </section>
+                <section data-markdown>
+                    ## 等等
+                    ## 寫程式沒有這麼困難啦
+                </section>
+                <section data-markdown>
+                    ## 目標
+                    + 基本的程式設計能力及概念
+                    + 培養未來有自學其他程式設計之興趣
+                </section>
+                <section data-markdown>
+                    ### 最重要的是
+                    # Have Fun
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>App Inventor 2</h2>
+                    <img src="./cuteAndroid.png" style="box-shadow:none;">
+                </section>
+                <section data-markdown>
+                    ## 需求
+                    + 需要有1組Google帳號
+                    + http://ai2.appinventor.mit.edu/?locale=zh_TW
+                    + 允許App Inventor Version2使用Google權限                    
+                </section>
+                <section data-markdown>
+                    ## 連接
+                    + Wifi (推薦)
+                    + 模擬器
+                    + Usb
+                </section>
+                <section data-markdown>
+                    # 使用 Wifi
+                </section>
+                <section data-markdown>
+                    ## Wifi 1
+                    ## 下載 [App](https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3)
+                </section>
+                <section data-markdown>
+                    ## wifi 2
+                    #### 點AI伴侶 (AI Companion)
+                    ![](./wifi1.jpg)
+                </section>
+                <section data-markdown>
+                    ## Wifi 3
+                    #### 掃 QR Code                    
+                    ![](./wifi2.jpg)
+                </section>
+                <section data-markdown>
+                    # 使用 模擬器
+                </section>
+                <section data-markdown>
+                    ## 模擬器 1
+                    ## 下載 [模擬器](https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3)
+                    ## 並安裝
+                </section>
+                <section data-markdown>
+                    ## 模擬器 2
+                    ## 開啟模擬器
+                    ![](./emulator1.jpg)                    
+                </section>
+                <section data-markdown>
+                    ## 模擬器 3
+                    #### 點模擬器 (Emulator)
+                    ![](./emulator2.jpg)
+                </section>
+                <section data-markdown>
+                    # 使用 Usb
+                </section>
+                <section data-markdown>
+                    ## 與 wifi 使用模式相同
+                    ## 這邊就不多做介紹
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # 元件介紹
+                </section>
+                <section data-markdown>
+                    ## 標籤 Label
+                    #### 用途是顯示文字
+                    ![](./component1.jpg)
+                </section>
+                <section>
+                    <h2>標籤 Label</h2>
+                    <table style="font-size:0.7em;">
+                        <tr>
+                            <th>屬性</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>文本 Text</td>
+                            <td>設定顯示的文字</td>
+                        </tr>
+                        <tr>
+                            <td>字型大小 FontSize</td>
+                            <td>設定文字大小，預設為 14</td>
+                        </tr>
+                        <tr>
+                            <td>文本顏色 TextColor</td>
+                            <td>設定文字顏色</td>
+                        </tr>
+                        <tr>
+                            <td>字型大小 TextAlignment</td>
+                            <td>設定文字對齊方式</td>
+                        </tr>
+                    </table>    
+                </section>
+                <section data-markdown>
+                    ## 文本輸入框 TextBox
+                    #### 用途是讓使用者輸入文字
+                    ![](./component2.jpg)
+                </section>
+                <section>
+                    <h2>文本輸入框 TextBox</h2>
+                    <table style="font-size:0.7em;">
+                        <tr>
+                            <th>屬性</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>文本 Text</td>
+                            <td>設定預設值</td>
+                        </tr>
+                        <tr>
+                            <td>提示 Hint</td>
+                            <td>設定提示文字，當使用者輸入後，就會消失</td>
+                        </tr>
+                        <tr>
+                            <td>允許多行 MultiLine</td>
+                            <td>設定是否可以換行</td>
+                        </tr>
+                        <tr>
+                            <td>僅限數字 NumbersOnly</td>
+                            <td>設定是否只能輸入數字</td>
+                        </tr>
+                    </table>    
+                </section>
+                <section data-markdown>
+                    ## 按鈕 Button
+                    #### 應用程式與使用者互動的主要元件
+                    ![](./component3.jpg)
+                </section>
+                <section>
+                    <h2>按鈕 Button</h2>
+                    <table style="font-size:0.7em;">
+                        <tr>
+                            <th>屬性</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>啟用 Enabled</td>
+                            <td>設定是否可按</td>
+                        </tr>
+                        <tr>
+                            <td>圖像 Image</td>
+                            <td>設定顯示圖片按鈕</td>
+                        </tr>
+                        <tr>
+                            <td>顯示交互效果 ShowFeedback</td>
+                            <td>設定按下按鈕，按鈕是否會閃動</td>
+                        </tr>
+                    </table>    
+                </section>
+                <section data-markdown>
+                    ## 水平布局 HorizontalArrangement
+                    #### 用途是排版，裡面的元件會以水平方式排列
+                    ![](./component4.jpg)
+                </section>
+                <section>
+                    <h2>水平布局 HorizontalArrangement</h2>
+                    <table style="font-size:0.7em;">
+                        <tr>
+                            <th>屬性</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>AlignHorizontal</td>
+                            <td>設定水平對齊方式</td>
+                        </tr>
+                        <tr>
+                            <td>AlignVertical</td>
+                            <td>設定垂直對齊方式</td>
+                        </tr>
+                        <tr>
+                            <td>Visible</td>
+                            <td>設定是否顯示元件</td>
+                        </tr>
+                    </table>
+                </section>
+                <section data-markdown>
+                    ## 垂直布局 VerticalArrangement
+                    #### 跟水平布局，裡面的元件會以垂直方式排列
+                    ![](./component5.jpg)
+                </section>
+                <section>
+                    <h2>其他常用屬性</h2>
+                    <table style="font-size:0.7em;">
+                        <tr>
+                            <th>屬性</th>
+                            <th>說明</th>
+                        </tr>
+                        <tr>
+                            <td>背景顏色 BackgroundColor</td>
+                            <td>設定背景顏色</td>
+                        </tr>
+                        <tr>
+                            <td>粗體 FontBold</td>
+                            <td>設定文字粗體</td>
+                        </tr>
+                        <tr>
+                            <td>斜體 FontItalic</td>
+                            <td>設定文字斜體</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>字體 FontTypeface</td>
+                            <td>設定文字字體</td>
+                        </tr>
+                        <tr>
+                            <td>高度 Height</td>
+                            <td>設定元件高度</td>
+                        </tr>
+                        <tr>
+                            <td>寬度 Width</td>
+                            <td>設定元件寬度</td>
+                        </tr>
+                    </table>
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    ## 來做著 BMI計算機 吧
+                </section>
+                <section data-markdown>
+                    ## 畫面
+                    ![](./bmi1.jpg)
+                </section>
+                <section data-markdown>
+                    ## 組件列表
+                    ![](./bmi2.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./bmi3.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./bmi4.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./bmi5.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./bmi6.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./bmi7.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./bmi8.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./bmi9.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./bmi10.jpg)
+                </section>
+                <section data-markdown>
+                    ### 來幫按鈕寫上功能吧
+                    ![](./bmi11.jpg)
+                </section>
+                <section data-markdown>
+                    ### 把他拉出來
+                    ![](./bmi12.jpg)
+                </section>
+            </section>
+        </div>
+    </div>
+
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.js"></script>
+
+    <script>
+        Reveal.initialize({
+            dependencies: [{
+                    src: '../plugin/markdown/marked.js'
+                },
+                {
+                    src: '../plugin/markdown/markdown.js'
+                },
+                {
+                    src: '../plugin/notes/notes.js',
+                    async: true
+                },
+                // {
+                //     src: '../plugin/highlight/highlight.js',
+                //     async: true,
+                //     callback: function() {
+                //         hljs.initHighlightingOnLoad();
+                //     }
+                // }
+            ]
+        });
+    </script>
+</body>
+
+</html>
