@@ -1,0 +1,535 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Webpage Design 4</title>
+
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/theme/white.css">
+    <link rel="stylesheet" href="../lib/css/atom-one-dark.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <section data-markdown>
+                    # Webpage Design 4
+                </section>
+                <section>
+                    <div id="profile">
+                        <h3>政治</h3>
+                        <img src="https://scontent.fkhh1-2.fna.fbcdn.net/v/t1.0-9/19366426_1570568816300681_6860427109623634434_n.jpg?oh=304964af12999cb643874ed9c127aa25&oe=5A18CA6F" />
+                    </div>
+                    <div id="link">
+                        <a href="https://www.facebook.com/he.z.min.1" target="_blank">
+                            <img src="../image/facebook.svg" />
+                        </a>
+                        <a href="mailto:wl00887404@gmail.com">
+                            <img src="../image/email.svg" />
+                        </a>
+                        <a href="https://github.com/wl00887404" target="_blank">
+                            <img src="../image/github.png" />
+                        </a>
+                        <a href="https://codepen.io/wl00887404/" target="_blank">
+                            <img src="../image/codepen.png" />
+                        </a>
+                        <a href="https://wl00887404.github.io" target="_blank">
+                            <img src="../image/blog.svg" />
+                        </a>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # 要聊聊
+                    # 期中考上機考嗎
+                </section>
+                <section id="overview">
+                    <div style="font-size:0.6em;display:flex;justify-content:space-around;margin-bottom:2rem;">
+                        <div>
+                            <span>平均：</span>
+                            <span class="average"></span>
+                        </div>
+                        <div>
+                            <span>標準差：</span>
+                            <span class="standardDeviation"></span>
+                        </div>
+                        <div>
+                            <span>筆數：</span>
+                            <span class="length"></span>
+                        </div>
+                    </div>
+                    <canvas></canvas>
+                </section>
+                <section data-markdown>
+                    ## 分數跟[解答影片](https://www.youtube.com/playlist?list=PL7KJPKR0gxJ-cVmKub4Q_yQykbDE_2qew)
+                    ## 已經上傳到 Ecourse
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # PHP
+                </section>
+                <section data-markdown>
+                    ## 什麼是 PHP
+                </section>
+                <section data-markdown>
+                    ## PHP 是一隻程式
+                    ## 一隻會產生 HTML 的程式
+                </section>
+                <section data-markdown>
+                    ## 以 PHP 製作的網頁
+                    ## 稱之為「動態網頁」
+                </section>
+                <section data-markdown>
+                    ## 動態網頁的意思
+                    ## 並不是網頁有動畫
+                    ## 而是網頁會根據使用者變動
+                </section>
+                <section data-markdown>
+                    ## 記得這個嗎
+                </section>
+                <section>
+                    <p style="text-align:left">
+                        35)<br/>
+                        What's the output for the following codes?<br/>
+                        Assume we save the following code in Q35<span style="color:red">.php</span>
+                    </p>
+                    <p style="text-align:left">
+                        36)<br/>
+                        What's the output for the following codes?<br/>
+                        Assume we save the following code in Q36<span style="color:red">.html</span>
+                    </p>
+                </section>
+                <section data-markdown>
+                    ## php 一定要有伺服器
+                    ## 所以 github pages 不能 php
+                </section>
+                <section data-markdown>
+                    # 不能雙擊 PHP 的檔案
+                    ## 要用 localhost 開啟
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # 基本語法
+                </section>
+                <section data-markdown>
+                    # $變數
+                </section>
+                <section data-markdown>
+                    # function 方法()
+                </section>
+                <section data-markdown>
+                    # if...else
+                    # switch...case
+                </section>
+                <section data-markdown>
+                    # for
+                    # while
+                    # foreach
+                </section>
+                <section data-markdown>
+                    # 盡量使用 foreach
+                    # 語法簡潔清楚
+                </section>
+                <section data-markdown>
+                    ```php
+$data=array(1,2,3,4,5);
+
+// bad
+for ($i=0; $i&lt;count($data); $i++) {
+    $value=$data[$i];
+    echo "[$i] is $value";
+}
+
+// good
+foreach ($data as $key =&gt; $value) {
+    echo "[$key] is $value";
+}
+                    ```
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # String
+                </section>
+                <section data-markdown>
+                    # 單引號與雙引號不一樣
+                </section>
+                <section data-markdown>
+                    # 單引號
+                    ```php
+$foo=87;
+echo 'foo is $foo'; // foo is $foo
+                    ```
+                </section>
+                <section data-markdown>
+                    # 雙引號
+                    ```php
+$foo=87;
+echo "foo is $foo"; // foo is 87
+                    ```
+                </section>
+                <section data-markdown>
+                    # 使用 `.` 字串連接運算子
+                    ```php
+$foo=87;
+echo 'foo is'.$foo; // foo is 87
+                    ```
+                </section>
+                <section data-markdown>
+                   # 盡量使用雙引號
+                   # 語法簡潔清楚
+                </section>
+                <section data-markdown>
+                    ```php
+$foo1="bar1";
+$foo2="bar2";
+$foo3="bar3";
+$foo4="bar4";
+
+// bad
+echo 'foo1 is '.$foo1.'&lt;br/&gt;foo2 is '.$foo2
+    .'&lt;br/&gt;foo3 is '.$foo3.'&lt;br/&gt;foo4 is '.$foo4;
+
+// good
+echo "foo1 is $foo1&lt;br/&gt;foo2 is $foo2&lt;br/>foo3 is $foo3&lt;br/&gt;foo4 is $foo4";
+                    ```
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # + 與 . 的差別
+                </section>
+                <section data-markdown>
+                    ## + 是數值運算
+                    ## 所有值都會自動轉型成數字
+                    ```php
+echo TRUE+0; // 1
+echo FALSE+0; // 0
+echo "2"+2+TRUE+FALSE; // 5
+                    ```
+                </section>
+                <section data-markdown>
+                    ## . 是字串連接
+                    ## 所有值都會自動轉型成字串
+                    ```php
+echo TRUE; // "1"
+echo FALSE; // ""
+echo "2".(2).TRUE.FALSE; // "221"
+                    ```
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # 處理陣列常用方法
+                </section>
+                <section data-markdown>
+                    ## print_r($string,$array)
+                    ### 把 $array 印出來
+                </section>
+                <section data-markdown>
+                    ## join($string,$array)
+                    ### 把 $array 之間插進 $string
+                    ### 合併成一個字串
+                </section>
+                <section data-markdown>
+
+```php
+$data=array(1,2,3,4,5,6);
+//結果為 "1|2|3|4|5|6"
+
+// bad
+$result="";
+for ($i=0; $i&lt;count($data); $i++) {
+    $result.=$data[$i];
+    if ($i!=count($data)-1) {
+        $result.="|";
+    }
+}
+
+// good
+$result=join("|", $data);
+```
+                </section>
+                <section data-markdown>
+                    ## array_map($function,$array);
+                    ### 很像 foreach
+                    ### 把 $array 每個元素都執行一次 $function
+                    ### 然後回傳一個新的 array
+                </section>
+                <section data-markdown>
+                    ```php
+$data=array(1,2,3,4,5,6);
+//結果為 array(3,4,5,6,7,8)
+
+function plus2($x){
+    return $x+2;
+}
+
+// bad
+$result=[];
+for ($i=0; $i&lt;count($data); $i++) {
+    $result[$i]=plus2($data[$i]);
+}
+
+// good
+$result=array_map("plus2", $data);
+                    ```
+                </section>
+                <section data-markdown>
+                    ## 把陣列印成 ul
+                    ```php
+&lt;?php
+    $data=array(1,2,3,4,5,6);
+    function plus2($x){
+        return $x+2;
+    }
+    function li($x){
+        return &quot;&lt;li&gt;$x&lt;/li&gt;&quot;;
+    }
+?&gt;
+
+// not bad
+&lt;ul&gt;
+    &lt;?php 
+        foreach($data as $key=&gt;$value){
+            echo '&lt;li&gt;'.plus2($value).'&lt;/li&gt;';
+        }
+    ?&gt;
+&lt;/ul&gt;
+
+// more clear
+&lt;ul&gt;
+    &lt;?php 
+        $plus2Data=array_map(&quot;plus2&quot;,$data);
+        $wrapLi=array_map(&quot;li&quot;,$plus2Data);
+        $result=join(&quot;&quot;,$wrapLi);
+        echo $result;
+    ?&gt;
+&lt;/ul&gt;
+                    ```
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # 作業
+                </section>
+                <section data-markdown>
+                    ## 拜託各位
+                    ## 一定要寫作業
+                </section>
+                <section data-markdown>
+                    ## 如果不想一個人寫
+                    ## 等等可以留下來助教陪你寫
+                </section>
+                <section data-markdown>
+                    ## 作業 
+                    ## 把一個 $data 顯示成表格
+```php
+$data=array(
+    array("Volvo",22,18),
+    array("BMW",15,13),
+    array("Saab",5,2),
+    array("Land Rover",17,15)   
+)
+```
+                </section>
+                <section>
+                    <h2>輸出結果</h2>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Stock</th>
+                            <th>Sold</th>
+                        </tr>
+                        <tr>
+                            <td>Volvo</td>
+                            <td>22</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>BMW</td>
+                            <td>15</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>Saab</td>
+                            <td>5</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>Land Rover</td>
+                            <td>17</td>
+                            <td>15</td>
+                        </tr>
+                    </table>
+                </section>
+                <section data-markdown>
+                    + 使用 for
+                    + 使用 foreach
+                    + 使用 array_map + join
+                </section>
+            </section>
+        </div>
+    </div>
+
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            dependencies: [{
+                    src: '../plugin/markdown/marked.js'
+                },
+                {
+                    src: '../plugin/markdown/markdown.js'
+                },
+                {
+                    src: '../plugin/notes/notes.js',
+                    async: true
+                },
+                {
+                    src: '../plugin/highlight/highlight.js',
+                    async: true,
+                    callback: function() {
+                        hljs.initHighlightingOnLoad();
+                    }
+                }
+            ]
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script>
+        Chart.defaults.global.defaultFontSize = 20;
+        Chart.defaults.global.defaultFontColor = "#000000";
+
+        const range = (min, max) => {
+            if (max == undefined) {
+                max = min
+                min = 0
+            }
+            const length = max - min
+            return Array.from({
+                length
+            }, (v, i) => min + i)
+        }
+
+        const scoreReference = {
+            "1": 20,
+            "2": 20,
+            "3-1": 8,
+            "3-2": 8,
+            "3-3": 8,
+            "3-4": 8,
+            "3-5": 8,
+            "4-1": 10,
+            "4-2": 10,
+            "4-3": 10,
+            "5-1": 10,
+            "5-2": 10,
+            "5-3": 10,
+            "6": 20
+        }
+
+        const makeOverview = json => {
+            const labels = ["0~30", "31~40", "41~50", "51~60", "61~70", "71~80", "81~90", "91~100"]
+            const canvas = document.querySelector("#overview canvas")
+            const ctx = canvas.getContext('2d')
+
+            const length = json.length
+            const average = json.map(({
+                score
+            }) => score).reduce((acc, el) => acc + el, 0) / length
+            const standardDeviation = Math.sqrt(
+                json.map(({
+                    score
+                }) => score - average)
+                .map(zscore => zscore * zscore)
+                .reduce((acc, el) => acc + el, 0) / length
+            )
+
+            document.querySelector("#overview .length").innerHTML = length
+            document.querySelector("#overview .average").innerHTML = Math.round(average * 100) / 100
+            document.querySelector("#overview .standardDeviation").innerHTML = Math.round(standardDeviation * 100) / 100
+
+            const data = json.map(({
+                score
+            }) => score).reduce((acc, el) => {
+                let index = Math.floor((el - 21) / 10)
+                if (index < 0) {
+                    index = 0
+                }
+                acc[index] += 1
+                return acc
+            }, labels.map(() => 0))
+
+            new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels,
+                    datasets: [{
+                        data,
+                        fill: false,
+                        backgroundColor: [
+                            "rgba(255, 99, 132, 0.2)",
+                            "rgba(255, 99, 132, 0.2)",
+                            "rgba(255, 99, 132, 0.2)",
+                            "rgba(255, 99, 132, 0.2)",
+                            "rgba(54, 162, 235, 0.2)",
+                            "rgba(54, 162, 235, 0.2)",
+                            "rgba(54, 162, 235, 0.2)",
+                            "rgba(54, 162, 235, 0.2)"
+                        ],
+                        borderColor: [
+                            "rgb(255, 99, 132)",
+                            "rgb(255, 99, 132)",
+                            "rgb(255, 99, 132)",
+                            "rgb(255, 99, 132)",
+                            "rgb(54, 162, 235)",
+                            "rgb(54, 162, 235)",
+                            "rgb(54, 162, 235)",
+                            "rgb(54, 162, 235)",
+                            "rgb(54, 162, 235)",
+                        ],
+                        borderWidth: 1
+
+                    }]
+                },
+                options: {
+                    legend: {
+                        display: false
+                    },
+                    tooltips: {
+                        enabled: false
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true,
+                                stepSize: 1,
+                                maxTicksLimit: 15,
+                                maxRotation: 0
+                            }
+                        }]
+                    }
+                }
+            });
+        }
+
+        fetch('./midterm_anonymous.json')
+            .then(res => res.json())
+            .then(json => {
+                makeOverview(json)
+            })
+    </script>
+</body>
+
+</html>
