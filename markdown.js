@@ -6,21 +6,35 @@ const md = require('markdown-it')({
 	highlight: (str, lang) => {
 		if (lang && hljs.getLanguage(lang)) {
 			try {
-				   return `<pre><code class="hljs">${hljs.highlight(lang, str, true).value}</code></pre>`;
+				const { value } = hljs.highlight(lang, str, true)
+				const lineNumbers = range(0, value.split('\n').length - 1)
+					.map(x => x + 1)
+					.map(l => `<span>${l}</span>`)
+					.join('')
+				return `<pre><code class="hljs"><div class="num">${
+					lineNumbers
+				}</div><div class="code">${value}</div></code></pre>`
 			} catch (__) {}
 		}
 		return ''
 	}
 })
 
+const range = (min, max) => (max > min ? [min, ...range(min + 1, max)] : [])
+
 const target = process.argv[2]
-if(!target){
-	throw new Error("thee is no target argv")
+if (!target) {
+	throw new Error('there is no target argv')
 }
+
 const setting = JSON.parse(
 	fs.readFileSync(`./${target}/setting.json`, { encoding: 'utf-8' })
 )
-const template = fs.readFileSync('./template/index.html', { encoding: 'utf-8' })
+const { template } = setting
+const templateRaw = fs.readFileSync(
+	`./template/${template || 'default'}.html`,
+	{ encoding: 'utf-8' }
+)
 const slidesRaw = fs.readFileSync(`./${target}/slides.md`, {
 	encoding: 'utf-8'
 })
@@ -79,5 +93,5 @@ const html = Box.of(slidesRaw)
 	.map(x => md.render(x))
 	.map(cropChapter)
 	.map(slides => Object.assign({}, setting, { slides }))
-	.fold(argsObj => fillInTemplate(template, argsObj))
+	.fold(argsObj => fillInTemplate(templateRaw, argsObj))
 fs.writeFileSync(`${target}/index.html`, html)

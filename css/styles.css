@@ -117,3 +117,17 @@ img {
 button{
     font-size: 1em;
 }
+
+.reveal pre code.hljs{
+    position: relative;
+    display: flex;
+}
+
+
+.reveal pre code.hljs .num{
+    padding-right:1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color:white;
+}
