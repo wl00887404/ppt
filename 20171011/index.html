@@ -1,0 +1,512 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>App Inventor 2</title>
+
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/theme/white.css">
+    <link rel="stylesheet" href="../lib/css/atom-one-dark.css">
+
+    <style>
+        * {
+            text-transform: none!important;
+        }
+
+        img {
+            border: none!important;
+        }
+
+        .reveal ul {
+            line-height: 1.4;
+        }
+
+        .reveal h4 {
+            font-weight: 400;
+        }
+
+        .reveal a:hover img {
+            box-shadow: none!important;
+        }
+
+        .reveal pre {
+            box-shadow: none;
+            border-radius: 4px;
+        }
+
+        .reveal pre code {
+            padding: 0.5em;
+        }
+
+        #profile img {
+            max-width: 30%;
+            border-radius: 50%;
+            box-shadow: none!important;
+        }
+
+        #link img {
+            width: 8%;
+            border-radius: 50%;
+            box-shadow: none!important;
+        }
+
+        .present > #profile ,.present > #link img{
+            animation-duration: .8s;
+            animation-fill-mode: both;
+            animation-name:popIn;
+        }
+
+        #profile{
+            animation-delay: 0.4s;
+        }
+        #link a:nth-child(1) img{
+            animation-delay: 0.6s;
+        }
+        #link a:nth-child(2) img{
+            animation-delay: 0.8s;
+        }
+        #link a:nth-child(3) img{
+            animation-delay: 1.0s;
+        }
+        #link a:nth-child(4) img{
+            animation-delay: 1.2s;
+        }
+        #link a:nth-child(5) img{
+            animation-delay: 1.4s;
+        }
+
+        @keyframes heart {
+            0% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.5);
+            }
+            50% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes popIn {
+            0% {
+                -webkit-transform: scale3d(0, 0, 0);
+                transform: scale3d(0, 0, 0);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            40% {
+                -webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+                animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+                -webkit-transform: scale3d(1.08, 1.08, 1.08);
+                transform: scale3d(1.08, 1.08, 1.08);
+            }
+            60% {
+                -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+                animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+            80% {
+                -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+                animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+                -webkit-transform: scale3d(1.03, 1.03, 1.03);
+                transform: scale3d(1.03, 1.03, 1.03);
+            }
+            100% {
+                -webkit-animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <section data-markdown>
+                    ### 嘉義長庚呼吸照護系
+                    # 一起來寫 App 吧
+                    ### Part 2
+                </section>
+                <section>
+                    <div id="profile">
+                        <h3>政治</h3>
+                        <img src="https://scontent.fkhh1-2.fna.fbcdn.net/v/t1.0-9/19366426_1570568816300681_6860427109623634434_n.jpg?oh=304964af12999cb643874ed9c127aa25&oe=5A18CA6F" />
+                    </div>
+                    <div id="link">
+                        <a href="https://www.facebook.com/he.z.min.1" target="_blank">
+                            <img src="https://image.flaticon.com/icons/svg/145/145802.svg" />
+                        </a>
+                        <a href="mailto:wl00887404@gmail.com">
+                            <img src="https://image.flaticon.com/icons/svg/190/190727.svg" />
+                        </a>
+                        <a href="https://github.com/wl00887404" target="_blank">
+                            <img src="http://www.freeiconspng.com/uploads/git-github-hub-icon-25.png" />
+                        </a>
+                        <a href="https://codepen.io/wl00887404/" target="_blank">
+                            <img src="http://blog.codepen.io/wp-content/uploads/2012/06/Button-Black-Large.png" />
+                        </a>
+                        <a href="https://wl00887404.github.io" target="_blank">
+                            <img src="https://image.flaticon.com/icons/svg/179/179312.svg" />
+                        </a>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # 基本元件介紹 3
+                </section>
+                <section data-markdown>
+                    ## 屏幕 Screen
+                    #### 在應用程式中的每一頁
+                    ![](./component1.jpg)
+                </section>
+                <section data-markdown>
+                    #### 在程序中可以開啟其他的屏幕
+                    ![](./component2.jpg)
+                </section>
+                <section data-markdown>
+                    #### 在程序中可以開啟其他的屏幕
+                    ![](./component3.jpg)
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # 打包成 apk
+                </section>
+                <section data-markdown>
+                    ### 當你的 App 完成的時候
+                    ### 你可以把專案做成安裝檔
+                    ### 就可以安裝使用者的手機上
+                </section>
+                <section data-markdown>
+                    ![](./apk1.jpg)
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # 變數
+                    ### Variable
+                </section>
+                <section data-markdown>
+                    ## 變數
+                    #### 用以把數值儲存起來
+                </section>
+                <section data-markdown>
+                    ### 變數一共分為
+                    + 全域變數
+                    + 區域變數
+                </section>
+                <section data-markdown>
+                    ![](./variable1.jpg)
+                </section>
+                <section data-markdown>
+                    ## 全域變數
+                    ### 會一直存在
+                    ### 一直到程式結束才消失
+                </section>
+                <section data-markdown>
+                    ## 區域變數
+                    ### 只存在於某個範圍
+                    ### 當離開範圍就會消失                    
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    ### 範例
+                    ## 計數器
+                </section>
+                <section data-markdown>
+                    ## 畫面
+                    ![](./counter1.jpg)
+                </section>
+                <section data-markdown>
+                    ## 組件列表
+                    ![](./counter2.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./counter3.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./counter4.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./counter5.jpg)
+                </section>
+                <section data-markdown>
+                    ### 設置全域變數
+                    ![](./counter6.jpg)
+                </section>
+                <section data-markdown>
+                    ### 使用全域變數
+                    ![](./counter7.jpg)
+                </section>
+                <section data-markdown>
+                    ### 大功告成
+                    #### 打開來玩玩看吧
+                    ![](./counter8.jpg)
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # 條件
+                    ### Condition
+                </section>
+                <section data-markdown>
+                    ## 條件
+                    #### 用以判斷該執行哪段程序
+                </section>
+                <section data-markdown>
+                    ![](./condition1.jpg)
+                </section>
+                <section data-markdown>
+                    ### 結合多個條件
+                    ![](./condition2.jpg)
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    ### 範例
+                    ## 猜數字
+                </section>
+                <section data-markdown>
+                    ## 畫面
+                    ![](./guess1.jpg)
+                </section>
+                <section data-markdown>
+                    ## 組件列表
+                    ![](./guess2.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./guess3.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./guess4.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./guess5.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./guess6.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./guess7.jpg)
+                </section>
+                <section data-markdown>
+                    ### 產生亂數
+                    ![](./guess8.jpg)
+                </section>
+                <section data-markdown>
+                    ### 判斷式
+                    ![](./guess9.jpg)
+                </section>
+                <section data-markdown>
+                    ### 條件判斷
+                    ![](./guess10.jpg)
+                </section>
+                <section data-markdown>
+                    ### 不清空前面的結果
+                    ### 把新的結果合併到後面
+                    ![](./guess11.jpg)
+                </section>
+                <section data-markdown>
+                    ### 更多如果 
+                    ![](./guess12.jpg)
+                </section>
+                <section data-markdown>
+                    ### 更多合併                        
+                    ![](./guess13.jpg)
+                </section>
+                <section data-markdown>
+                    ### 完成 按鈕1
+                    ![](./guess14.jpg)
+                </section>
+                <section data-markdown>
+                    ### 完成 按鈕2
+                    ![](./guess15.jpg)
+                </section>
+                <section data-markdown>
+                    ### 大功告成
+                    #### 打開來玩玩看吧
+                    ![](./guess16.jpg)
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # 迴圈
+                    ### Loop
+                </section>
+                <section data-markdown>
+                    ## 迴圈
+                    #### 用以讓程序重複執行
+                </section>
+                <section data-markdown>
+                    ![](./loop1.jpg)
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    ### 範例
+                    ## 1 + ... + n
+                </section>
+                <section data-markdown>
+                    ## 畫面
+                    ![](./sigma1.jpg)
+                </section>
+                <section data-markdown>
+                    ## 組件列表
+                    ![](./sigma2.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./sigma3.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./sigma4.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./sigma5.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./sigma6.jpg)
+                </section>
+                <section data-markdown>
+                    ### 設置區域變數
+                    ![](./sigma7.jpg)
+                </section>
+                <section data-markdown>
+                    ### 從 1 加至 TextBox1
+                    ![](./sigma8.jpg)
+                </section>
+                <section data-markdown>
+                    ### 將所有數字加到 sum
+                    ![](./sigma9.jpg)
+                </section>
+                <section data-markdown>
+                    ### 顯示結果
+                    ![](./sigma10.jpg)
+                </section>
+                <section data-markdown>
+                    ### 大功告成
+                    #### 打開來玩玩看吧
+                    ![](./sigma11.jpg)
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # 函式
+                    ### Function
+                </section>
+                <section data-markdown>
+                    ## 函式
+                    #### 用以過多功能相似的程式碼
+                    #### 讓程式模組化
+                </section>
+                <section data-markdown>
+                    ![](./funtcion1.jpg)
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    ### 範例
+                    ## 嗨
+                </section>
+                <section data-markdown>
+                    ## 畫面
+                    ![](./hello1.jpg)
+                </section>
+                <section data-markdown>
+                    ## 組件列表
+                    ![](./hello2.jpg)
+                </section>
+                <section data-markdown>
+                    ### 三個按鈕都一樣
+                    ![](./hello3.jpg)
+                </section>
+                <section data-markdown>
+                    ![](./hello4.jpg)
+                </section>
+                <section data-markdown>
+                    ### 定義一個函式
+                    ![](./hello5.jpg)
+                </section>
+                <section data-markdown>
+                    ### 設定一個參數
+                    ![](./hello6.jpg)
+                </section>
+                <section data-markdown>
+                    ### 呼叫 hello                        
+                    ![](./hello7.jpg)
+                </section>
+                <section data-markdown>
+                    ### 大功告成
+                    #### 打開來玩玩看吧
+                    ![](./hello8.jpg)
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    ## 程式是什麼呢？
+                </section>  
+                <section data-markdown>
+                    ## Programs =
+                    ## Data Structures + Algorithms
+                </section>    
+                <section data-markdown>
+                    ## 程式就是
+                    ## 資料 + 運算
+                </section>  
+                <section data-markdown>
+                    ## 也就是說
+                    ### 各位已經對程式設計有了一定的了解了
+                </section>
+                <section data-markdown>
+                    ## 如果有興趣的話
+                    ## 可以嘗試學學看其他程式語言
+                </section>                    
+                <section data-markdown>
+                    ## 譬如說寫一個網頁之類的...
+                </section>                    
+                <section data-markdown>
+                    ### Thank all of you.
+                </section>                    
+                    
+            </section>                    
+        </div>
+    </div>
+
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.js"></script>
+
+    <script>
+        Reveal.initialize({
+            dependencies: [{
+                    src: '../plugin/markdown/marked.js'
+                },
+                {
+                    src: '../plugin/markdown/markdown.js'
+                },
+                {
+                    src: '../plugin/notes/notes.js',
+                    async: true
+                },
+                // {
+                //     src: '../plugin/highlight/highlight.js',
+                //     async: true,
+                //     callback: function() {
+                //         hljs.initHighlightingOnLoad();
+                //     }
+                // }
+            ]
+        });
+    </script>
+</body>
+
+</html>
