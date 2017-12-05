@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Webpage Design 3</title>
+
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/theme/white.css">
+    <link rel="stylesheet" href="../lib/css/atom-one-dark.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <section data-markdown>
+                    # Webpage Design 3
+                </section>
+                <section>
+                    <div id="profile">
+                        <h3>政治</h3>
+                        <img src="https://scontent.fkhh1-2.fna.fbcdn.net/v/t1.0-9/19366426_1570568816300681_6860427109623634434_n.jpg?oh=304964af12999cb643874ed9c127aa25&oe=5A18CA6F" />
+                    </div>
+                    <div id="link">
+                        <a href="https://www.facebook.com/he.z.min.1" target="_blank">
+                            <img src="../image/facebook.svg" />
+                        </a>
+                        <a href="mailto:wl00887404@gmail.com">
+                            <img src="../image/email.svg" />
+                        </a>
+                        <a href="https://github.com/wl00887404" target="_blank">
+                            <img src="../image/github.png" />
+                        </a>
+                        <a href="https://codepen.io/wl00887404/" target="_blank">
+                            <img src="../image/codepen.png" />
+                        </a>
+                        <a href="https://wl00887404.github.io" target="_blank">
+                            <img src="../image/blog.svg" />
+                        </a>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # Midterm Exam
+                </section>
+                <section data-markdown>
+                    ## 49 人同時考試
+                    ## 助教忙不過來
+                </section>
+                <section data-markdown>
+                    ## 希望能分成兩個時段
+                    ## 一個時段兩個小時
+                </section>
+                <section data-markdown>
+                    ## 第一個時段
+                    # 1600 ~ 1800
+                </section>
+                <section data-markdown>
+                    ## 第二個時段
+                    # 1800 ~ 2000
+                </section>
+                <section data-markdown>
+                    ## 有人哪個時段不方便的嗎？
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # Midterm Rule
+                </section>
+                <section data-markdown>
+                    + 可以 Google
+                    + 可以使用任何開發工具
+                      Codepen、Sass、Gulp、Webpack...
+                    + 不准與他人交談、交換程式碼
+                      ## 違者零分
+                </section>
+                <section data-markdown>
+                    + 總配分超過 100 分
+                    + 只要完成就舉手叫助教
+                    + 途中有下課，下課中途可以交談
+                    + 下半堂提交，成績八折
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # Review
+                </section>
+                <section>
+                    <ul>
+                        <li><a onclick="Reveal.slide(4)">Selectors</a></li>
+                        <li><a onclick="Reveal.slide(5)">FlexBox</a></li>
+                        <li><a onclick="Reveal.slide(6)">Position</a></li>
+                        <li><a onclick="Reveal.slide(7)">Transition / Animation</a></li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # Selectors
+                </section>
+                <section data-markdown>
+                    ## CSS Dinner
+                </section>
+                <section data-markdown>
+                    ## 怎麼選擇出奇數元素？
+                    ```css
+div:nth-child(odd){
+    /*code here...*/
+}
+                    ```
+                </section>
+                <section data-markdown>
+                    ## 怎麼選擇出最後的元素？
+                    ```css
+div:last-child{
+    /*code here...*/
+}
+                    ```
+                </section>
+                <section data-markdown>
+                    ## 怎麼做出間隔？
+                </section>
+                <section data-markdown>
+                    # 設定全部，取消最後
+                    ```css
+div{
+    margin-right:0.5em;
+}
+div:last-child{
+    margin-right:0;
+}
+                    ```
+                </section>
+                <section data-markdown>
+                    # 直接把非最後選出來
+                    ```css
+div:not(:last-child){
+    margin-right:0.5em;
+}
+                    ```
+                    </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # FlexBox
+                </section>
+                <section data-markdown>
+                    ## 垂直置中
+                    ```css
+#centercenter{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+                    ```
+                </section>
+                <section data-markdown>
+                    ## grow 、 shrink 、 basic
+                </section>
+                <section data-markdown>
+                    + grow
+                      當寬度不足，自動填滿
+                    + shrink
+                      當寬度超過，自動壓縮
+                    + basic
+                      原始大小
+                </section>
+            </section>
+            <section>
+                <section data-markdown>
+                    # Position
+                </section>
+                <section>
+                    ## 當元素有「重疊」
+                    ## 一定是 Position
+                </section>
+                <section data-markdown>
+                    + static
+                    + relative
+                    + absolute
+                    + fixed
+                </section>
+                <section data-markdown>
+                    # [相關連結](http://zh-tw.learnlayout.com/position.html)
+                </section>                   
+            </section>
+            <section>
+                <section data-markdown>    
+                    # Transition / Animation
+                </section>   
+                <section data-markdown>    
+                    # Transition
+```css
+div{
+    transition: property time delay;    
+}
+```
+                </section>                   
+            </section>
+        </div>
+    </div>
+
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.js"></script>
+
+    <script>
+        Reveal.initialize({
+            dependencies: [{
+                    src: '../plugin/markdown/marked.js'
+                },
+                {
+                    src: '../plugin/markdown/markdown.js'
+                },
+                {
+                    src: '../plugin/notes/notes.js',
+                    async: true
+                },
+                {
+                    src: '../plugin/highlight/highlight.js',
+                    async: true,
+                    callback: function() {
+                        hljs.initHighlightingOnLoad();
+                    }
+                }
+            ]
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+</body>
+
+</html>
