@@ -120,7 +120,7 @@ button{
 
 .reveal pre code.hljs{
     position: relative;
-    display: flex;
+   /*display: flex; */
 }
 
 
