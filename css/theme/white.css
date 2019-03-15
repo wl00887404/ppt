@@ -15,7 +15,7 @@ body {
   background-color: #fff; }
 
 .reveal {
-  font-family: "微軟正黑體","Source Sans Pro", Helvetica, sans-serif;
+  font-family: "微軟正黑體", "Source Sans Pro", Helvetica, sans-serif;
   font-size: 42px;
   font-weight: normal;
   color: #222; }
@@ -46,8 +46,8 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #222;
-  font-family: "微軟正黑體","Source Sans Pro", Helvetica, sans-serif;
-  font-weight: 600;
+  font-family: "微軟正黑體", "Source Sans Pro", Helvetica, sans-serif;
+  /* font-weight: 600; */
   line-height: 1.2;
   letter-spacing: normal;
   text-transform: uppercase;
@@ -117,7 +117,7 @@ body {
   margin-left: 40px; }
 
 .reveal dt {
-  font-weight: bold; }
+  /* font-weight: bold; */ }
 
 .reveal dd {
   margin-left: 40px; }
@@ -171,7 +171,7 @@ body {
   border-spacing: 0; }
 
 .reveal table th {
-  font-weight: bold; }
+  /* font-weight: bold; */ }
 
 .reveal table th,
 .reveal table td {
